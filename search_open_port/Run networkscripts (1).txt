@@ -1,0 +1,82 @@
+HOW TO RUN SEARCH SCRIPTS ON POWERSHELL
+
+
+*Save the "recon" script into your desktop for easy acess*
+
+*Make sure you also have a file titled, "domains.txt" and put all the domains there (see attached example for NJ)
+
+
+
+STEPS
+
+1. Open Powershell
+
+2. Enter: cd Desktop #Should change directory to desktop where you can access the file
+
+3. Enter: ./recon.ps1
+
+DONE
+
+
+///Note///
+This will search all the domains from your domains.txt file. You may choose to save to a txt file, but copying/pasting might be best.
+You may get some test connection errors and alike, just ignore and let the script run
+
+
+TROUBLESHOOTING
+
+If powershell doesn't run the script, try the following:
+
+1. Close powershell and then open again
+
+2. Enter: powershell -ExecutionPolicy Bypass -File .\(Your script file name      domain name)
+
+OR
+3. Set-ExecutionPolicy Unrestricted -Scope Process -Force     #Removes any file restrictions for the session
+
+OR (Preferred)
+
+4. Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force #Removes any file restrictions for the user (so don't have to redo again)
+
+
+5. Change directory to where your file is ex. cd Desktop
+
+6. Run the file: ./recon.ps1 
+
+
+///Note//
+
+If you prefer searching manually, you can do this - 
+
+ Enter: ./recon.ps1 (name of domain you want to check) (name of other domain) (name of other domain)
+
+
+*You may want to limit domains to three or four because powershell has its limits on what it can output.*
+
+*Also, after step 5, you might have to enter: Unblock-File -Path .\recon.ps1   (if it still doesn't run.)
+ 
+
+
+SEARCHING FOR MANY DOMAINS
+
+1. Create a text file called "domains.txt"
+
+2. Fill it with domains, ex - 
+
+monmouth.edu
+rutger.edu
+rowan.edu
+etc...
+
+3. Save it and then run ./recon.ps1
+
+This overcomes the limitation of powershell by running each domain one at a time as though the user were manually searching.
+
+
+OPTIONAL
+
+You can run the job without powershell open by using: Start-Job -ScriptBlock { & "C:\Users\[your username]\Desktop\recon.ps1" }
+
+For large domain lists, you can output to a file:  - .\recon.ps1 | Out-File "$env:USERPROFILE\Desktop\scan_results.txt"
+
+For lists >1000, divide in half as two separate txt files and run ./recon.ps1 output to a file.
