@@ -1,0 +1,15 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures proper scaling on mobile -->
+</head>
+<body>
+
+    <p>Hello World.</p>
+
+    <div>
+        Joe Chung, UNIX Administrator-Teacher<br>
+        Computer Science & Software Engineering Department
+    </div>
+
+</body>
+</html>

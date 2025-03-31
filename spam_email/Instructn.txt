@@ -1,0 +1,12 @@
+It is advised to keep files on Desktop or somewhere easily found
+
+1.    Open Powershell
+
+2.    Type: cd "C:\Users\[your username])\Desktop"  (Will be different according to your desktop login and file location)
+
+3.    Press Enter, then type: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process 
+
+4.    Presss Enter, if it asks for permission, press "Y" for Yes, then type the name of the file. Example: \send_email.ps1
+
+
+Viola!
